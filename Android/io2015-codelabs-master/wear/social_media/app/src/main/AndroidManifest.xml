@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Main2Activity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,6 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Social Media Usage Data" />
+        <activity
+            android:name=".News3Activity"
+            android:label="Relevant Academic Articles" />
+        <activity
+            android:name=".Reduce4Activity"
+            android:label="Detachment Plans"></activity>
     </application>
 
 </manifest>

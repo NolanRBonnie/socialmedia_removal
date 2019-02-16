@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">social_media</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Reduce</string>
+    <string name="title_dashboard">Data Analytics</string>
+    <string name="title_notifications">News</string>
+    <string name="title_activity_news3">News3Activity</string>
+    <string name="title_activity_reduce4">Reduce4Activity</string>
 </resources>
