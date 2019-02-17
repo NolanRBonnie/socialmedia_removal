@@ -17,11 +17,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -483,6 +478,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
 
+<<<<<<< HEAD:Android/io2015-codelabs-master_FINAL/wear/social_media/app/src/main/java/com/example/nolanbonnie/social_media/Main2Activity.java
         BarChart chart = (BarChart) findViewById(R.id.chart);
 
         List<Long> data = allLongArrays.get(0);
@@ -503,6 +499,9 @@ public class Main2Activity extends AppCompatActivity {
         chart.setFitBars(true); // make the x-axis fit exactly all bars
         chart.invalidate(); // refresh
         chart.getDescription().setEnabled(false);
+=======
+
+>>>>>>> b5c757cf3e4be5016270bc74426fe8f5932d84f8:Android/io2015-codelabs-master/wear/social_media/app/src/main/java/com/example/nolanbonnie/social_media/Main2Activity.java
 
 
 

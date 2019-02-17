@@ -58,17 +58,24 @@ public class News3Activity extends AppCompatActivity {
         list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Foggy Iceland"));
         list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Havasu Falls"));
         list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Hawaii RainForest"));
+<<<<<<< HEAD:Android/io2015-codelabs-master_FINAL/wear/social_media/app/src/main/java/com/example/nolanbonnie/social_media/News3Activity.java
         list.add(new Card("drawable://" + R.drawable.sm ,"www.google.com", "NewFoundLand Ice"));
+=======
+        list.add(new Card("drawable://" + R.drawable.sm , "www.google.com", "NewFoundLand Ice"));
+>>>>>>> b5c757cf3e4be5016270bc74426fe8f5932d84f8:Android/io2015-codelabs-master/wear/social_media/app/src/main/java/com/example/nolanbonnie/social_media/News3Activity.java
         list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Oregon Greens"));
         list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Smokey Mountain"));
         list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Yosemite"));
 
         CustomListAdapter adapter = new CustomListAdapter(this, R.layout.card_layout, list);
         mListView.setAdapter(adapter);
+<<<<<<< HEAD:Android/io2015-codelabs-master_FINAL/wear/social_media/app/src/main/java/com/example/nolanbonnie/social_media/News3Activity.java
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.navigation_notifications);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+=======
+>>>>>>> b5c757cf3e4be5016270bc74426fe8f5932d84f8:Android/io2015-codelabs-master/wear/social_media/app/src/main/java/com/example/nolanbonnie/social_media/News3Activity.java
     }
 
 }
