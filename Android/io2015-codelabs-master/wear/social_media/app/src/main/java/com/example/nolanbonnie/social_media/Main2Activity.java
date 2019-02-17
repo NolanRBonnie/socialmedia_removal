@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -90,7 +91,7 @@ public class Main2Activity extends AppCompatActivity {
         //NEED TO CHECK THESE ID's ARE CORRECT
 
         for (UsageStats usageStats : queryUsageStats)
-            if (usageStats.getTotalTimeInForeground() > 10000) {  // 60000ms, = 1 minute
+            if (usageStats.getTotalTimeInForeground() > 60000) {  // 60000ms, = 1 minute
                 String app_parts = usageStats.getPackageName();
                 String[] split_name = app_parts.split("\\.");
 
@@ -116,8 +117,19 @@ public class Main2Activity extends AppCompatActivity {
 
                 TextView textbox = (TextView) findViewById(R.id.editText);
                 textbox.setMovementMethod(new ScrollingMovementMethod());
-                textbox.setText(textbox.getText() + "\n" + split_name[0] + " "+ app_name + ": "
-                        + (usageStats.getTotalTimeInForeground() / (1000 * 60)) + " Minutes", TextView.BufferType.SPANNABLE);
+
+                double y = (double) usageStats.getTotalTimeInForeground();
+                DecimalFormat df = new DecimalFormat("#.##");
+                // Log.e("long_int", "value" + (y/2));
+
+                if((usageStats.getTotalTimeInForeground() / (1000 * 60)) < 60 ) {
+                    textbox.setText(textbox.getText() + "\n" + app_name + ": "
+                            + df.format(y / (1000 * 60)) + " Minutes", TextView.BufferType.SPANNABLE);
+                } else {
+                    textbox.setText(textbox.getText() + "\n" + app_name + ": "
+                            + df.format(y / (1000 * 60 * 60)) + " Hours", TextView.BufferType.SPANNABLE);
+                }
+
                 Log.i("Stats", usageStats.getPackageName() + " " + usageStats.getTotalTimeInForeground());
 
 
