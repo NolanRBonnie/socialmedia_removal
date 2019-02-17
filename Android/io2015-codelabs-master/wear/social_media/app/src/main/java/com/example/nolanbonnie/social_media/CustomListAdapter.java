@@ -1,6 +1,8 @@
 package com.example.nolanbonnie.social_media;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -63,6 +65,7 @@ public class CustomListAdapter  extends ArrayAdapter<Card> {
         //get the persons information
         String title = getItem(position).getTitle();
         String imgUrl = getItem(position).getImgURL();
+        final String article = getItem(position).getArticle();
 
 
         try{
@@ -98,6 +101,14 @@ public class CustomListAdapter  extends ArrayAdapter<Card> {
 
             holder.title.setText(title);
 
+            result.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(article));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    view.getContext().startActivity(intent);
+                }
+            });
+
             //create the imageloader object
             ImageLoader imageLoader = ImageLoader.getInstance();
 
@@ -112,6 +123,7 @@ public class CustomListAdapter  extends ArrayAdapter<Card> {
 
             //download and display image from url
             imageLoader.displayImage(imgUrl, holder.image, options);
+
 
             return convertView;
         }catch (IllegalArgumentException e){
