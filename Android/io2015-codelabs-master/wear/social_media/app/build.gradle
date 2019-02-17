@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
-
 android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.nolanbonnie.social_media"
@@ -27,6 +37,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    implementation 'com.android.support:cardview-v7:28.0.+'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
 }
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+
