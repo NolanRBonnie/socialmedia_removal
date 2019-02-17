@@ -16,12 +16,7 @@
 
         <activity
             android:name=".Main2Activity"
-<<<<<<< HEAD:Android/io2015-codelabs-master_FINAL/wear/social_media/app/src/main/AndroidManifest.xml
             android:label="App Usage Data">
-=======
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
->>>>>>> b5c757cf3e4be5016270bc74426fe8f5932d84f8:Android/io2015-codelabs-master/wear/social_media/app/src/main/AndroidManifest.xml
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
