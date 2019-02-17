@@ -49,20 +49,12 @@ public class News3Activity extends AppCompatActivity {
 
         ArrayList<Card> list = new ArrayList<>();
 
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Arizona Dessert"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Bamf"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Colorado Mountains"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Cork"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "DavenPort California"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Denmark Austrailia"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Foggy Iceland"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Havasu Falls"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Hawaii RainForest"));
-        list.add(new Card("drawable://" + R.drawable.sm ,"www.google.com", "NewFoundLand Ice"));
-        list.add(new Card("drawable://" + R.drawable.sm , "www.google.com", "NewFoundLand Ice"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Oregon Greens"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Smokey Mountain"));
-        list.add(new Card("drawable://" + R.drawable.sm, "www.google.com", "Yosemite"));
+        list.add(new Card("drawable://" + R.drawable.sm, "https://www.liebertpub.com/doi/pdf/10.1089/cpb.1998.1.25", "By KIMBERLY S. YOUNG, Psy.D. and ROBERT C. ROGERS "));
+        list.add(new Card("drawable://" + R.drawable.sm, "https://www.liebertpub.com/doi/pdf/10.1089/cpb.2004.7.384", "By KIMBERLY S. YOUNG, Psy.D. and ROBERT C. ROGERS "));
+        list.add(new Card("drawable://" + R.drawable.sm, "https://www.liebertpub.com/doi/pdf/10.1089/109493103321640338", "By KIMBERLY S. YOUNG, Psy.D. and ROBERT C. ROGERS "));
+        list.add(new Card("drawable://" + R.drawable.sm, "https://www.liebertpub.com/doi/pdf/10.1089/cyber.2014.0070", "By Igor Pantic, MD, PhD "));
+        list.add(new Card("drawable://" + R.drawable.sm, "https://www.liebertpub.com/doi/pdf/10.1089/cyber.2014.0070", "By Igor Pantic, MD, PhD "));
+
 
         CustomListAdapter adapter = new CustomListAdapter(this, R.layout.card_layout, list);
         mListView.setAdapter(adapter);
