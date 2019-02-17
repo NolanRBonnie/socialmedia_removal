@@ -50,10 +50,10 @@ public class News3Activity extends AppCompatActivity {
         ArrayList<Card> list = new ArrayList<>();
 
         list.add(new Card("drawable://" + R.drawable.a1, "https://www.liebertpub.com/doi/pdf/10.1089/cpb.1998.1.25", "By KIMBERLY S. YOUNG, Psy.D. and ROBERT C. ROGERS "));
-        list.add(new Card("drawable://" + R.drawable.a2, "https://www.liebertpub.com/doi/pdf/10.1089/cpb.2004.7.384", "By KIMBERLY S. YOUNG, Psy.D. and ROBERT C. ROGERS "));
-        list.add(new Card("drawable://" + R.drawable.a3, "https://www.liebertpub.com/doi/pdf/10.1089/109493103321640338", "By KIMBERLY S. YOUNG, Psy.D. and ROBERT C. ROGERS "));
+        list.add(new Card("drawable://" + R.drawable.a2, "https://www.liebertpub.com/doi/pdf/10.1089/cpb.2004.7.384", "By INDEOK SONG, B.A.,1 ROBERT LAROSE, Ph.D.,1 MATTHEW S. EASTIN, Ph.D.,2 and CAROLYN A. LIN, Ph.D.3 "));
+        list.add(new Card("drawable://" + R.drawable.a3, "https://www.liebertpub.com/doi/pdf/10.1089/109493103321640338", "By Leo Sang-Min Whang, Ph.D.,1 Sujin Lee, Ph.D.,2 and Geunyoung Chang, M.A.1 "));
         list.add(new Card("drawable://" + R.drawable.a4, "https://www.liebertpub.com/doi/pdf/10.1089/cyber.2014.0070", "By Igor Pantic, MD, PhD "));
-        list.add(new Card("drawable://" + R.drawable.a5, "https://www.liebertpub.com/doi/pdf/10.1089/cyber.2014.0070", "By Igor Pantic, MD, PhD "));
+        list.add(new Card("drawable://" + R.drawable.a5, "https://www.liebertpub.com/doi/pdf/10.1089/cyber.2014.0070", "By KANWAL NALWA, Ph.D., and ARCHANA PREET ANAND, Ph.D."));
 
 
         CustomListAdapter adapter = new CustomListAdapter(this, R.layout.card_layout, list);
