@@ -17,11 +17,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -482,27 +477,6 @@ public class Main2Activity extends AppCompatActivity {
                     arr.remove(0);
             }
         }
-
-        BarChart chart = (BarChart) findViewById(R.id.chart);
-
-        List<Long> data = allLongArrays.get(0);
-
-        List<BarEntry> entries = new ArrayList<>();
-
-        int i = 1;
-        for (Long l : data) {
-            entries.add(new BarEntry((float) i, (float) l));
-            i += 1;
-        }
-
-        BarDataSet set = new BarDataSet(entries, "BarDataSet");
-
-        BarData data2 = new BarData(set);
-        data2.setBarWidth(1f); // set custom bar width
-        chart.setData(data2);
-        chart.setFitBars(true); // make the x-axis fit exactly all bars
-        chart.invalidate(); // refresh
-
 
 
 
