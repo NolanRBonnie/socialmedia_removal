@@ -1,13 +1,12 @@
 package com.example.nolanbonnie.social_media;
 
-import android.app.ActivityManager;
 import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.icu.text.Collator;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -16,12 +15,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.content.Intent;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
@@ -65,7 +64,8 @@ public class Main2Activity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        final UsageStatsManager usageStatsManager=(UsageStatsManager)this.getSystemService(Context.USAGE_STATS_SERVICE);// Context.USAGE_STATS_SERVICE);
+        final UsageStatsManager usageStatsManager=(UsageStatsManager)this.getSystemService(Context.USAGE_STATS_SERVICE);
+        // Context.USAGE_STATS_SERVICE);
 
         Calendar beginCal = Calendar.getInstance();
         beginCal.set(Calendar.DATE, 10);
@@ -78,21 +78,61 @@ public class Main2Activity extends AppCompatActivity {
         endCal.set(Calendar.YEAR, 2019);
 
         final List<UsageStats> queryUsageStats=usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_BEST,
-                System.currentTimeMillis() - 10000000, System.currentTimeMillis());
+                System.currentTimeMillis() - (86400000*7), System.currentTimeMillis()); //1 week data pull
 
-        for (UsageStats usageStats : queryUsageStats) {
-            if (usageStats.getTotalTimeInForeground() > 0) {
+        HashMap<String, Long> App_Data_Week = new HashMap<String, Long>();
+
+        String[] strs = {"instagram", "snapchat", "facebook", "twitter", "reddit", "pinterest",
+                "linkedin", "tumblr", "flickr", "periscope", "youtube","contacts", "vending", "frontpage", ""};
+
+        List<String> media_sites = Arrays.asList(strs);
+
+        //NEED TO CHECK THESE ID's ARE CORRECT
+
+        for (UsageStats usageStats : queryUsageStats)
+            if (usageStats.getTotalTimeInForeground() > 10000) {  // 60000ms, = 1 minute
+                String app_parts = usageStats.getPackageName();
+                String[] split_name = app_parts.split("\\.");
+
+                if (!split_name[0].matches("com")){
+                    Log.e("qwerty", Arrays.toString(split_name));
+                    Log.e("qwerty", split_name[0].getClass().getName());
+                    //Log.d("qwerty", split_name[split_name.length-1]);
+                   // Log.d("qwerty", )
+                    continue;
+                    //Needs to skip to next for loop iteration
+                }
+
+                String app_name = null;
+                try {
+                    app_name = split_name[split_name.length - 1];
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                App_Data_Week.put(app_name, (usageStats.getTotalTimeInForeground() / (1000 * 60)));
+
+
+
                 TextView textbox = (TextView) findViewById(R.id.editText);
                 textbox.setMovementMethod(new ScrollingMovementMethod());
-                textbox.setText(textbox.getText() + "\n" + usageStats.getPackageName() + ": " + usageStats.getTotalTimeInForeground(), TextView.BufferType.SPANNABLE);
+                textbox.setText(textbox.getText() + "\n" + split_name[0] + " "+ app_name + ": "
+                        + (usageStats.getTotalTimeInForeground() / (1000 * 60)) + " Minutes", TextView.BufferType.SPANNABLE);
                 Log.i("Stats", usageStats.getPackageName() + " " + usageStats.getTotalTimeInForeground());
+
+
             }
-
-        }
-
-
+            Log.e("hash_data", App_Data_Week.toString());
+//            for (String i : App_Data_Week.keySet()) {
+//                if (!media_sites.contains(i)){
+//                    App_Data_Week.remove(i);
+//                }
+//            }
+            App_Data_Week.keySet().retainAll(media_sites);
+            Log.e("hash_data", App_Data_Week.toString());
 
     }
+
     private boolean isAccessGranted() {
         try {
             PackageManager packageManager = getPackageManager();
