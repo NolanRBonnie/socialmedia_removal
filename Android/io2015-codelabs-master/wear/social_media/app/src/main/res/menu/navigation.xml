@@ -13,11 +13,7 @@
 
     <item
         android:id="@+id/navigation_notifications"
-<<<<<<< HEAD:Android/io2015-codelabs-master_FINAL/wear/social_media/app/src/main/res/menu/navigation.xml
         android:icon="@drawable/b2"
-=======
-        android:icon="@drawable/ic_notifications_black_24dp"
->>>>>>> b5c757cf3e4be5016270bc74426fe8f5932d84f8:Android/io2015-codelabs-master/wear/social_media/app/src/main/res/menu/navigation.xml
         android:title="@string/title_notifications" />
 
 </menu>
