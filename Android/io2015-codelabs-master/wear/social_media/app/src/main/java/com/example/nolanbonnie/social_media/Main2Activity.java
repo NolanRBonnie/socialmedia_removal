@@ -21,7 +21,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
@@ -138,7 +141,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         Log.e("hash_data", App_Data_Day1.toString());
-        App_Data_Day1.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+        // App_Data_Day1.keySet().retainAll(media_sites);      // ! parse out non-social media titles
         Log.e("hash_data", App_Data_Day1.toString());
 
         TextView textbox = (TextView) findViewById(R.id.editText);
@@ -177,7 +180,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         Log.e("hash_data", App_Data_Day2.toString());
-        App_Data_Day2.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+        // App_Data_Day2.keySet().retainAll(media_sites);      // ! parse out non-social media titles
         Log.e("hash_data", App_Data_Day2.toString());
 
         textbox.setMovementMethod(new ScrollingMovementMethod());
@@ -215,7 +218,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         Log.e("hash_data", App_Data_Day3.toString());
-        App_Data_Day3.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+        // App_Data_Day3.keySet().retainAll(media_sites);      // ! parse out non-social media titles
         Log.e("hash_data", App_Data_Day3.toString());
 
         textbox.setMovementMethod(new ScrollingMovementMethod());
@@ -253,7 +256,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         Log.e("hash_data", App_Data_Day4.toString());
-        App_Data_Day4.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+        // App_Data_Day4.keySet().retainAll(media_sites);      // ! parse out non-social media titles
         Log.e("hash_data", App_Data_Day4.toString());
 
         textbox.setMovementMethod(new ScrollingMovementMethod());
@@ -291,7 +294,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         Log.e("hash_data", App_Data_Day5.toString());
-        App_Data_Day5.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+        // App_Data_Day5.keySet().retainAll(media_sites);      // ! parse out non-social media titles
         Log.e("hash_data", App_Data_Day5.toString());
 
         textbox.setMovementMethod(new ScrollingMovementMethod());
@@ -329,7 +332,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         Log.e("hash_data", App_Data_Day6.toString());
-        App_Data_Day6.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+        // App_Data_Day6.keySet().retainAll(media_sites);      // ! parse out non-social media titles
         Log.e("hash_data", App_Data_Day6.toString());
 
         textbox.setMovementMethod(new ScrollingMovementMethod());
@@ -368,11 +371,153 @@ public class Main2Activity extends AppCompatActivity {
                 Log.i("Stats", usageStats.getPackageName() + " " + usageStats.getTotalTimeInForeground());
             }
 
+
         Log.e("hash_data", App_Data_Day7.toString());
-        App_Data_Day7.keySet().retainAll(media_sites);      // ! parse out non-social media titles
-        Log.e("hash_data", App_Data_Day7.toString());
+       // App_Data_Day7.keySet().retainAll(media_sites);      // ! parse out non-social media titles
+       // Log.e("hash_data", App_Data_Day7.toString());
+        Log.e("hash_data", sortHashMapByValues(App_Data_Day7).toString());
+
+
+
+        LinkedHashMap<String, Long> day1 = sortHashMapByValues(App_Data_Day1);
+        LinkedHashMap<String, Long> day2 = sortHashMapByValues(App_Data_Day2);
+        LinkedHashMap<String, Long> day3 = sortHashMapByValues(App_Data_Day3);
+        LinkedHashMap<String, Long> day4 = sortHashMapByValues(App_Data_Day4);
+        LinkedHashMap<String, Long> day5 = sortHashMapByValues(App_Data_Day5);
+        LinkedHashMap<String, Long> day6 = sortHashMapByValues(App_Data_Day6);
+        LinkedHashMap<String, Long> day7 = sortHashMapByValues(App_Data_Day7);
+
+
+        //List<LinkedHashMap<String, Long>> week = {day1, day2, day3, day4, day5, day6, day7};
+        ArrayList<String> Key1 = new ArrayList<String>();
+        for (String i : day1.keySet()){
+            Key1.add(i);
+        }
+        ArrayList<Long> Value1 = new ArrayList<Long>();
+        for (Long i : day1.values()){
+            Value1.add(i);
+        }
+        ArrayList<String> Key2 = new ArrayList<String>();
+        for (String i : day2.keySet()){
+            Key2.add(i);
+        }
+        ArrayList<Long> Value2 = new ArrayList<Long>();
+        for (Long i : day2.values()){
+            Value2.add(i);
+        }
+        ArrayList<String> Key3 = new ArrayList<String>();
+        for (String i : day3.keySet()){
+            Key3.add(i);
+        }
+        ArrayList<Long> Value3 = new ArrayList<Long>();
+        for (Long i : day3.values()){
+            Value3.add(i);
+        }
+        ArrayList<String> Key4 = new ArrayList<String>();
+        for (String i : day4.keySet()){
+            Key4.add(i);
+        }
+        ArrayList<Long> Value4 = new ArrayList<Long>();
+        for (Long i : day4.values()){
+            Value4.add(i);
+        }
+        ArrayList<String> Key5 = new ArrayList<String>();
+        for (String i : day5.keySet()){
+            Key5.add(i);
+        }
+        ArrayList<Long> Value5 = new ArrayList<Long>();
+        for (Long i : day5.values()){
+            Value5.add(i);
+        }
+        ArrayList<String> Key6 = new ArrayList<String>();
+        for (String i : day6.keySet()){
+            Key6.add(i);
+        }
+        ArrayList<Long> Value6 = new ArrayList<Long>();
+        for (Long i : day6.values()){
+            Value6.add(i);
+        }
+        ArrayList<String> Key7 = new ArrayList<String>();
+        for (String i : day7.keySet()){
+            Key7.add(i);
+        }
+        ArrayList<Long> Value7 = new ArrayList<Long>();
+        for (Long i : day7.values()){
+            Value7.add(i);
+        }
+
+        ArrayList<ArrayList<String>> allStringArrays = new ArrayList<ArrayList<String>>();
+        allStringArrays.add(Key1);
+        allStringArrays.add(Key2);
+        allStringArrays.add(Key3);
+        allStringArrays.add(Key4);
+        allStringArrays.add(Key5);
+        allStringArrays.add(Key6);
+        allStringArrays.add(Key7);
+
+        ArrayList<ArrayList<Long>> allLongArrays = new ArrayList<ArrayList<Long>>();
+        allLongArrays.add(Value1);
+        allLongArrays.add(Value2);
+        allLongArrays.add(Value3);
+        allLongArrays.add(Value4);
+        allLongArrays.add(Value5);
+        allLongArrays.add(Value6);
+        allLongArrays.add(Value7);
+
+        for (ArrayList<String> arr : allStringArrays){
+            if (arr.size() > 10){
+                while(arr.size() > 10)
+                    arr.remove(0);
+            }
+        }
+
+        for (ArrayList<Long> arr : allLongArrays){
+            if (arr.size() > 10){
+                while(arr.size() > 10)
+                    arr.remove(0);
+            }
+        }
+
+
+
+
+
+
 
     }
+
+    public LinkedHashMap<String, Long> sortHashMapByValues(
+            HashMap<String, Long> passedMap) {
+        List<String> mapKeys = new ArrayList<>(passedMap.keySet());
+        List<Long> mapValues = new ArrayList<>(passedMap.values());
+        Collections.sort(mapValues);
+        Collections.sort(mapKeys);
+
+        LinkedHashMap<String, Long> sortedMap =
+                new LinkedHashMap<>();
+
+        Iterator<Long> valueIt = mapValues.iterator();
+        while (valueIt.hasNext()) {
+            Long val = valueIt.next();
+            Iterator<String> keyIt = mapKeys.iterator();
+
+            while (keyIt.hasNext()) {
+                String key = keyIt.next();
+                Long comp1 = passedMap.get(key);
+                Long comp2 = val;
+
+                if (comp1.equals(comp2)) {
+                    keyIt.remove();
+                    sortedMap.put(key, val);
+                    break;
+                }
+            }
+        }
+        return sortedMap;
+    }
+
+
+
 
     private boolean isAccessGranted() {
         try {
