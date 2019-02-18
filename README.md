@@ -16,7 +16,7 @@ Additionally, we have a page full of fantastic scholarly articles that a user ma
 
 
 ## How we built it
-Using Android-Studio we had 2 programmers writing the java and xml for this project, whist our 3rd member created some graphics for our application. 
+Using Android-Studio we had 2 programmers writing the java and xml for this project, whilst our 3rd member created some graphics for our application. 
 ## Challenges we ran into
 Perhaps one of the largest issues one of our programmers faced was with google's latest movements towards user security, thus making it very difficult for apps to obtain permission such as the permissions used in this app. Additionally, one of our programmers had never coded in Android-Studio before, and didn't know any Java. He ended up coding some very advanced methods for having just learned the language. 
 
