@@ -10,7 +10,10 @@ Zuju is an application that presents the user's app usage information in a visua
 
 
 Additionally, we have a page full of fantastic scholarly articles that a user may find useful.
+
+
 <img src="https://github.com/NolanRBonnie/socialmedia_removal/blob/master/Photos/Screenshot_20190217-060927_social_media.jpg" alt="Scholarly Sources Page" width="200">
+
 
 ## How we built it
 Using Android-Studio we had 2 programmers writing the java and xml for this project, whist our 3rd member created some graphics for our application. 
